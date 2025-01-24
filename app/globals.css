@@ -1,0 +1,88 @@
+/* ✅ Tailwind CSS Imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ✅ Light Mode Variables */
+:root {
+  --background: #F5F5F5; /* Page background */
+  --foreground: #333333; /* Primary text color */
+  --card-background: #FFFFFF; /* Card background */
+  --card-shadow: rgba(0, 0, 0, 0.05); /* Light card shadow */
+  --text-secondary: #666666; /* Secondary text color */
+}
+
+/* ✅ Dark Mode Variables */
+.dark {
+  --background: #1E1E1E; /* Dark page background */
+  --foreground: #E0E0E0; /* Primary text color in dark mode */
+  --card-background: #2C2C2C; /* Dark card background */
+  --card-shadow: rgba(0, 0, 0, 0.3); /* Dark card shadow */
+  --text-secondary: #AAAAAA; /* Secondary text color */
+}
+
+/* ✅ Task Animation Styles */
+.task-item {
+  transition: all 0.5s ease-in-out; /* Smooth transitions */
+}
+
+.task-item.animate-pulse {
+  animation: pulse 1.5s ease-in-out; /* Pulse animation */
+}
+
+.task-item .affirmation-message {
+  position: absolute; /* Hover placement */
+  background: #4caf50; /* Affirmation background */
+  color: white; /* Affirmation text */
+  font-size: 0.85rem; /* Text size */
+  padding: 4px 8px; /* Padding */
+  border-radius: 4px; /* Rounded corners */
+  top: -20px; /* Position above */
+  left: 10px; /* Align horizontally */
+  opacity: 0.9; /* Slight transparency */
+  animation: fadeOut 1.5s forwards; /* Fade out effect */
+}
+
+/* ✅ Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ✅ FadeOut Animation */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* ✅ Global Body Styles */
+body {
+  @apply bg-skin-fill text-skin-base transition-colors duration-300;
+}
+
+/* ✅ Section Card Styling */
+.section-card {
+  @apply bg-skin-card text-skin-base border-skin-base rounded-md shadow-md transition-colors duration-300;
+}
+
+/* ✅ Section Header Text */
+.section-header {
+  @apply text-skin-base font-medium;
+}
+
+/* ✅ Section Item Text */
+.section-item {
+  color: var(--foreground);
+}
